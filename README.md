@@ -36,7 +36,9 @@ To evaluate the denoising techniques, we generate a synthetic dataset consisting
 ### Signal Composition
 **Underlying Signal (s(t))**:
 
-![s(t) = \sum_{k=1}^{3} A_k \sin(2\pi f_k t + \phi_k)](https://latex.codecogs.com/svg.image?s(t)&space;=&space;\sum_{k=1}^{3}&space;A_k&space;\sin(2\pi&space;f_k&space;t&space;&plus;&space;\phi_k))
+\[
+s(t) = \sum_{k=1}^{3} A_k \sin(2\pi f_k t + \phi_k)
+\]
 
 - **A<sub>k</sub>**: Amplitude of the k-th sinusoid
 - **f<sub>k</sub>**: Frequency of the k-th sinusoid
@@ -55,10 +57,18 @@ To evaluate the denoising techniques, we generate a synthetic dataset consisting
 
 ### Data Generation Process
 1. **Time Vector Creation**: 
-   ![t = \text{linspace}(0, T, N)](https://latex.codecogs.com/svg.image?t&space;=&space;	ext{linspace}(0,&space;T,&space;N)), where **N** = 500,000.
+   
+   \[
+t = 	ext{linspace}(0, T, N)
+\]
+   
+   where **N** = 500,000.
 2. **Signal Generation**: Generate the clean signal s(t) by summing the sinusoids with specified amplitudes, frequencies, and phase shifts.
 3. **Noise Addition**: Add Gaussian white noise n(t) to the clean signal to produce the noisy signal:
-   ![y(t) = s(t) + n(t)](https://latex.codecogs.com/svg.image?y(t)&space;=&space;s(t)&space;&plus;&space;n(t))
+
+\[
+y(t) = s(t) + n(t)
+\]
 
 ## Signal Denoising Techniques
 ### Classical Fourier Transform (CFT)
@@ -109,10 +119,18 @@ To compare the techniques, we evaluate the following metrics:
 - **Computational Time**: Time taken to perform denoising on the dataset.
 - **Accuracy**:
   - **Mean Squared Error (MSE)**: Average squared difference between the denoised signal and the true clean signal.
-    ![\text{MSE} = \frac{1}{N} \sum_{i=1}^{N} \left( s(t_i) - \hat{s}(t_i) \right)^2](https://latex.codecogs.com/svg.image?	ext{MSE}&space;=&space;rac{1}{N}&space;\sum_{i=1}^{N}&space;\left(&space;s(t_i)&space;-&space;\hat{s}(t_i)&space;
-ight)^2)
+  
+  \[
+  	ext{MSE} = rac{1}{N} \sum_{i=1}^{N} \left( s(t_i) - \hat{s}(t_i) 
+ight)^2
+  \]
+  
   - **Signal-to-Noise Ratio Improvement (ΔSNR)**: Difference in SNR before and after denoising.
-    ![Δ \text{SNR} = \text{SNR}_{\text{denoised}} - \text{SNR}_{\text{noisy}}](https://latex.codecogs.com/svg.image?\Delta&space;	ext{SNR}&space;=&space;	ext{SNR}_{	ext{denoised}}&space;-&space;	ext{SNR}_{	ext{noisy}})
+  
+  \[
+  \Delta 	ext{SNR} = 	ext{SNR}_{	ext{denoised}} - 	ext{SNR}_{	ext{noisy}}
+  \]
+
 - **Noise Reduction Effectiveness**: Visual and quantitative assessment of residual noise in the denoised signal.
 
 ## Results
