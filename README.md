@@ -135,7 +135,7 @@ To better understand the concepts in this project, the following resources are h
 
 ---
 
-## 📊 Research Papers & Academic Resources
+## Research Papers & Academic Resources
 
 ### Conference Papers
 - [CVPR 2017: Non-Local Color Image Denoising](https://openaccess.thecvf.com/content_cvpr_2017/papers/Lefkimmiatis_Non-Local_Color_Image_CVPR_2017_paper.pdf)
