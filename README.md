@@ -111,8 +111,6 @@ The following metrics will be used to assess denoising performance:
     *   [SciPy Signal Processing](https://docs.scipy.org/doc/scipy/tutorial/signal.html) (Useful for filter design)
 
 
-## Educational Video Series
-
 ### General Signal Processing
 - [Denoising Data with FFT [Matlab]](https://www.youtube.com/watch?v=c249W6uc7ho&t=7s)
 - [Fourier Transform Fundamentals](https://www.youtube.com/watch?v=c249W6uc7ho)
@@ -129,7 +127,6 @@ The following metrics will be used to assess denoising performance:
 - [Image Quality Metrics](https://www.youtube.com/watch?v=XEbV7WfoOSE)
 - [DnCNN Implementation](https://www.youtube.com/watch?v=4d6EeRJZLbo)
 
-## FFT-Based Denoising
 
 ### Tutorials & Guides
 - [Denoising Signals Using FFT - Python Bloggers](https://python-bloggers.com/2024/02/denoising-signals-using-the-fft/)
@@ -149,8 +146,6 @@ The following metrics will be used to assess denoising performance:
 - [Wiley: Mathematical Methods in Applied Sciences](https://onlinelibrary.wiley.com/doi/10.1002/mma.1547)
 - [Wiley PDF: Full Paper](https://onlinelibrary.wiley.com/doi/pdf/10.1002/mma.1547)
 
-
-## Deep Learning Approaches
 
 ### Autoencoders
 
@@ -178,8 +173,6 @@ The following metrics will be used to assess denoising performance:
 - [DigitalOcean: Denoising via Diffusion Model](https://www.digitalocean.com/community/tutorials/denoising-via-diffusion-model)
 
 
-## Research Papers & Academic Resources
-
 ### Conference Papers
 - [CVPR 2017: Non-Local Color Image Denoising](https://openaccess.thecvf.com/content_cvpr_2017/papers/Lefkimmiatis_Non-Local_Color_Image_CVPR_2017_paper.pdf)
 - [SPIE: Image Denoising Using CNN](https://www.spiedigitallibrary.org/conference-proceedings-of-spie/11400/114000A/Image-denoising-using-convolutional-neural-network/10.1117/12.2563838.full?webSyncID=80d8e8ab-eeae-d6ae-05c1-17aac5a91993)
@@ -205,8 +198,6 @@ The following metrics will be used to assess denoising performance:
 - [Semantic Scholar: Deep Learning Tutorial](https://www.semanticscholar.org/paper/Deep-learning-tutorial-for-denoising-Yu-Ma/055c51167e879d2aa8846bf6d88bfefb36779d8d)
 
 
-## Evaluation Metrics & Performance
-
 ### Metric Explanations
 - [Wikipedia: Peak Signal-to-Noise Ratio (PSNR)](https://en.wikipedia.org/wiki/Peak_signal-to-noise_ratio)
 - [ScienceDirect: Peak Signal Topics](https://www.sciencedirect.com/topics/engineering/peak-signal)
@@ -220,8 +211,6 @@ The following metrics will be used to assess denoising performance:
 - [LinkedIn: Evaluating Signal Processing Effectiveness](https://www.linkedin.com/advice/0/how-do-you-evaluate-effectiveness-signal-processing-jfjkc)
 
 
-## Technical Articles & Comparisons
-
 ### Comparison Studies
 - [IJERT: Comparison of Digital Image Denoising Techniques](https://www.ijert.org/comparison-of-different-techniques-of-digital-image-denoising)
 - [IJCJ: International Journal of Computer](https://ijcjournal.org/InternationalJournalOfComputer/article/download/1204/492/2904)
@@ -229,8 +218,6 @@ The following metrics will be used to assess denoising performance:
 - [IOSR VLSI: Denoising Techniques](https://www.iosrjournals.org/iosr-jvlsi/papers/vol6-issue6/Version-1/H0606014857.pdf)
 - [WSEAS: Journal Articles](https://wseas.com/journals/articles.php?id=10610)
 - [SciOpen: Denoising Research](https://www.sciopen.com/article/10.19693/j.issn.1673-3185.03176)
-
-## Wavelet-Based Denoising
 
 - [Wavelet Theory - University of Maryland](https://terpconnect.umd.edu/~toh/spectrum/wavelets.html)
 
