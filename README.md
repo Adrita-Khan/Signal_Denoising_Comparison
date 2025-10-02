@@ -2,61 +2,108 @@
 
 ## Overview
 
-This project provides a practical exploration and comparative analysis of three fundamental signal denoising methodologies: the **Classical Fourier Transform (CFT)**, the **Fast Fourier Transform (FFT)**, and a **Deep Learning** approach. The primary objective is to understand the theoretical foundations, implement these techniques, and evaluate their performance in terms of **accuracy, computational efficiency, and suitability** for different signal types and noise conditions. This project serves as an excellent hands-on introduction to elementary signal analysis and modern denoising strategies.
+This project provides a practical exploration and comparative analysis of three fundamental signal denoising methodologies: **Classical Fourier Transform (CFT)**, **Fast Fourier Transform (FFT)**, and **Deep Learning**. The primary objective is to understand the theoretical foundations, implement these techniques, and evaluate their performance in terms of accuracy, computational efficiency, and suitability for different signal types and noise conditions.
 
-## Methodologies
+---
+
+## Methodologies Comparison
+
+| Method | Core Concept | Primary Advantage | Key Limitation |
+|--------|--------------|-------------------|----------------|
+| **Classical Fourier Transform (CFT)** | Continuous frequency domain representation using numerical integration | Educational value; continuous-frequency perspective | Computationally intensive; impractical for real-time use |
+| **Fast Fourier Transform (FFT)** | Efficient DFT algorithm (e.g., Cooley-Tukey) | Drastically faster; enables real-time processing | Potential spectral leakage and ringing artifacts |
+| **Deep Learning (CNN)** | Neural network learns noise patterns from training data | Handles complex, non-linear noise; adaptive learning | Requires large datasets and GPU resources; overfitting risk |
+
+---
+
+## Detailed Methodology Breakdown
 
 ### 1. Classical Fourier Transform (CFT)
 
-*   **Concept:** The CFT provides a continuous representation of a signal in the frequency domain. In practice, we approximate it using numerical integration techniques (like Simpson's rule) on discretized signals.
-*   **Denoising Application:** Noise is often concentrated in high frequencies. Denoising is achieved by applying a **low-pass filter** in the frequency domain to attenuate these components before reconstructing the signal via the inverse transform.
-*   **Limitations:** Computationally intensive for large datasets, making it impractical for real-time applications. It is primarily used here for its educational value in understanding the continuous-frequency perspective.
+**Concept**  
+The CFT provides a continuous representation of a signal in the frequency domain. In practice, we approximate it using numerical integration techniques (like Simpson's rule) on discretized signals.
+
+**Denoising Application**  
+Noise is often concentrated in high frequencies. Denoising is achieved by applying a low-pass filter in the frequency domain to attenuate these components before reconstructing the signal via the inverse transform.
+
+**Limitations**  
+Computationally intensive for large datasets, making it impractical for real-time applications. It is primarily used here for its educational value in understanding the continuous-frequency perspective.
+
+---
 
 ### 2. Fast Fourier Transform (FFT)
 
-*   **Concept:** The FFT is an efficient algorithm (e.g., Cooley-Tukey) for calculating the Discrete Fourier Transform (DFT). It is the workhorse for digital signal processing.
-*   **Denoising Application:** Similar to CFT, it transforms the signal to the frequency domain for filtering (low-pass, band-pass, etc.). Its speed allows for practical analysis of large, discrete signals.
-*   **Advantages:** Drastically faster than a direct DFT computation or CFT approximation, enabling real-time processing on standard hardware.
-*   **Considerations:** As a global transform, it can introduce artifacts like **spectral leakage** (if the signal is not periodic in the observation window) and **ringing** (Gibbs phenomenon) near sharp discontinuities.
+**Concept**  
+The FFT is an efficient algorithm for calculating the Discrete Fourier Transform (DFT). It is the workhorse for digital signal processing.
+
+**Denoising Application**  
+Similar to CFT, it transforms the signal to the frequency domain for filtering (low-pass, band-pass, etc.). Its speed allows for practical analysis of large, discrete signals.
+
+**Advantages**  
+Drastically faster than a direct DFT computation or CFT approximation, enabling real-time processing on standard hardware.
+
+**Considerations**  
+As a global transform, it can introduce artifacts like spectral leakage (if the signal is not periodic in the observation window) and ringing (Gibbs phenomenon) near sharp discontinuities.
+
+---
 
 ### 3. Deep Learning (CNN-based)
 
-*   **Architecture:** Employs a **Convolutional Neural Network (CNN)** or a **Denoising Autoencoder**. These architectures are adept at learning hierarchical features from data.
-*   **Training Process:** The model learns in a **supervised** manner. It is trained on a large dataset of pairs—`(noisy_signal, clean_signal)`—to map the former to the latter.
-*   **Denoising Application:** The trained model directly outputs a denoised signal. It can learn complex, non-linear noise patterns that are difficult to model with traditional filters.
-*   **Limitations:** Requires significant computational resources (GPUs) for training and a large, representative dataset. There is a risk of **overfitting** to the training data if the model is not properly regularized or the dataset is too small.
+**Architecture**  
+Employs a Convolutional Neural Network (CNN) or a Denoising Autoencoder. These architectures are adept at learning hierarchical features from data.
 
-## Project Roadmap & Current Status
+**Training Process**  
+The model learns in a supervised manner. It is trained on a large dataset of pairs—`(noisy_signal, clean_signal)`—to map the former to the latter.
 
-**Current Status: Phase 1 - Theoretical Foundation & Design**
-We are currently finalizing the theoretical comparison and designing the experimental setup.
+**Denoising Application**  
+The trained model directly outputs a denoised signal. It can learn complex, non-linear noise patterns that are difficult to model with traditional filters.
 
-**Planned Implementation:**
+**Limitations**  
+Requires significant computational resources (GPUs) for training and a large, representative dataset. There is a risk of overfitting to the training data if the model is not properly regularized or the dataset is too small.
 
-*   **Phase 2: Data Acquisition & Synthesis**
-    *   Collect clean signal datasets (e.g., ECG, audio, synthetic signals).
-    *   Programmatically generate training and test data by adding various types of noise (e.g., Gaussian white noise, power-line interference).
+---
 
-*   **Phase 3: Algorithm Implementation**
-    *   Implement the CFT-based denoiser using numerical integration.
-    *   Implement the FFT-based denoiser with configurable low-pass filters.
-    *   Design, build, and train a CNN model for denoising.
+## Project Roadmap
 
-*   **Phase 4: Quantitative Evaluation & Analysis**
-    *   Evaluate all techniques using standard metrics:
-        *   **Mean Squared Error (MSE)**
-        *   **Signal-to-Noise Ratio (SNR)** improvement
-        *   **Peak Signal-to-Noise Ratio (PSNR)**
-    *   Compare computational performance (execution time).
-    *   Visually compare the denoised signals against the originals.
+### Current Status
+**Phase 1: Theoretical Foundation & Design** ✓  
+Finalizing the theoretical comparison and designing the experimental setup.
 
-*   **Future Exploration:**
-    *   Investigate hybrid approaches (e.g., using wavelet transforms as a pre-processor for deep learning).
-    *   Optimize the deep learning model for specific signal types.
+### Implementation Timeline
+
+| Phase | Focus Area | Key Activities |
+|-------|-----------|----------------|
+| **Phase 2** | Data Acquisition & Synthesis | • Collect clean signal datasets (ECG, audio, synthetic)<br>• Generate training/test data with various noise types (Gaussian, power-line interference) |
+| **Phase 3** | Algorithm Implementation | • Implement CFT-based denoiser with numerical integration<br>• Implement FFT-based denoiser with configurable filters<br>• Design, build, and train CNN model |
+| **Phase 4** | Evaluation & Analysis | • Quantitative evaluation using standard metrics<br>• Computational performance comparison<br>• Visual quality assessment |
+
+---
+
+## Evaluation Metrics
+
+The following metrics will be used to assess denoising performance:
+
+| Metric | Description | Purpose |
+|--------|-------------|---------|
+| **MSE** | Mean Squared Error | Measures average squared difference between original and denoised signals |
+| **SNR** | Signal-to-Noise Ratio improvement | Quantifies the ratio of signal power to noise power |
+| **PSNR** | Peak Signal-to-Noise Ratio | Measures reconstruction quality; higher values indicate better denoising |
+| **Execution Time** | Computational performance | Compares processing speed across methods |
+
+---
+
+## Future Exploration
+
+- **Hybrid Approaches**: Investigate combining wavelet transforms as a pre-processor for deep learning models
+- **Model Optimization**: Fine-tune deep learning architectures for specific signal types (ECG, audio, seismic, etc.)
+- **Adaptive Filtering**: Explore techniques that automatically adjust parameters based on noise characteristics
+- **Real-time Implementation**: Optimize algorithms for embedded systems and edge devices
+
+---
+
 
 ## Learning Resources
 
-To better understand the concepts in this project, the following resources are highly recommended:
 
 *   **Technical References:**
     *   [NumPy FFT Documentation](https://numpy.org/doc/stable/reference/routines.fft.html) (Essential for implementation)
@@ -82,8 +129,6 @@ To better understand the concepts in this project, the following resources are h
 - [Image Quality Metrics](https://www.youtube.com/watch?v=XEbV7WfoOSE)
 - [DnCNN Implementation](https://www.youtube.com/watch?v=4d6EeRJZLbo)
 
----
-
 ## FFT-Based Denoising
 
 ### Tutorials & Guides
@@ -104,7 +149,6 @@ To better understand the concepts in this project, the following resources are h
 - [Wiley: Mathematical Methods in Applied Sciences](https://onlinelibrary.wiley.com/doi/10.1002/mma.1547)
 - [Wiley PDF: Full Paper](https://onlinelibrary.wiley.com/doi/pdf/10.1002/mma.1547)
 
----
 
 ## Deep Learning Approaches
 
@@ -133,7 +177,6 @@ To better understand the concepts in this project, the following resources are h
 - [Complex-Valued CNNs for Medical Image Denoising](https://towardsdatascience.com/complex-valued-cnns-for-medical-image-denoising-12a4262c6ef6/)
 - [DigitalOcean: Denoising via Diffusion Model](https://www.digitalocean.com/community/tutorials/denoising-via-diffusion-model)
 
----
 
 ## Research Papers & Academic Resources
 
@@ -161,7 +204,6 @@ To better understand the concepts in this project, the following resources are h
 - [Scribd: Extra Credit Document](https://www.scribd.com/document/372461861/AM-410-Extra-Credit)
 - [Semantic Scholar: Deep Learning Tutorial](https://www.semanticscholar.org/paper/Deep-learning-tutorial-for-denoising-Yu-Ma/055c51167e879d2aa8846bf6d88bfefb36779d8d)
 
----
 
 ## Evaluation Metrics & Performance
 
@@ -177,7 +219,6 @@ To better understand the concepts in this project, the following resources are h
 - [Moldstud: Evaluating Image Quality with MATLAB](https://moldstud.com/articles/p-evaluating-image-quality-with-matlab-insights-from-the-computer-vision-toolbox)
 - [LinkedIn: Evaluating Signal Processing Effectiveness](https://www.linkedin.com/advice/0/how-do-you-evaluate-effectiveness-signal-processing-jfjkc)
 
----
 
 ## Technical Articles & Comparisons
 
