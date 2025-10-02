@@ -239,3 +239,10 @@ To compare the techniques, we evaluate the following metrics:
 ---
 **Note**: The results presented are based on simulated data and may vary with different datasets or parameters. For practical applications, it's essential to consider the specific requirements and constraints of the task at hand.
 
+-----
+
+## Contact
+
+**Adrita Khan**  
+[Email](mailto:adrita.khan.official@gmail.com) | [LinkedIn](https://www.linkedin.com/in/adrita-khan) | [Twitter](https://x.com/Adrita_)
+
